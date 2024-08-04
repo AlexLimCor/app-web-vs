@@ -45,7 +45,7 @@ export const Home = () => {
       </div>
       <div className="div-downloads">
         <div className="dw-title">
-          <h2 className="text-light">=====DESCARGAS=====</h2>
+          <h2 className="text-light">DESCARGAS</h2>
         </div>
         <div className="cont-card-dw">
           <CardDw logo={logoCs} title={name} link={link} />

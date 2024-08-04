@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./Register.css";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import  Swal  from "sweetalert2"
 
 const clientId =
   "953111487592-kitfbjrr8imuspur8nqk3m3qdljqpjfa.apps.googleusercontent.com";
@@ -41,8 +42,20 @@ export const Register = () => {
         },
         body: JSON.stringify(formDataRegister),
       });
-      const data = await response.json();
-      console.log(data);
+      if (response.ok){
+        const data = await response.json();
+        Swal.fire({
+          background: "#222",
+          color:"#fff",
+          iconColor:"green",
+          position: "center",
+          icon: "success",
+          text:"hola mundo",
+          title: "You 'r successfully",
+          showConfirmButton: true,
+        });
+        console.log(data)
+      }
     } catch (error) {
       console.log(error);
     }
