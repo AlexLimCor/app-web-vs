@@ -1,0 +1,103 @@
+.container-home {
+  background-color: #222;
+}
+
+.container-banner {
+  height: 450px;
+  /* border: 2px solid red; */
+  /* text-align: center; */
+  width: 100%;
+}
+
+.banner {
+  background-image: url(../../../src/assets/img/banner2.webp);
+  height: 100%;
+  /* width: 80%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* border: 2px solid blue; */
+  /* background-position: center; */
+}
+
+.anton-regular span {
+  color: red;
+}
+
+.title-banner {
+  /* border: 2px solid red; */
+  width: 50%;
+  padding: 20px;
+}
+
+.title-banner p {
+  color: white;
+}
+
+.home-btn {
+  /* border: 2px solid red; */
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-btn button {
+  padding: 15px;
+  /* margin: 15px; */
+  margin: 2px;
+  /* border: 2px solid red; */
+  width: 50%;
+}
+
+.div-downloads {
+  margin-top: 10px;
+  /* border-bottom: 1px solid grey; */
+  /* text-align: center; */
+}
+
+.dw-title {
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+.cont-card-dw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* border-bottom: 2px solid #fff; */
+}
+
+.card-dw {
+  height: 200px;
+  border: 2px solid grey;
+  border-radius: 20px;
+  width: 40%;
+  margin: 20px;
+  /* border-radius: 20px; */
+  display: flex;
+}
+
+.card-dw p {
+  color: white;
+}
+
+.card-dw img {
+  /* height: 50%; */
+  width: 30%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right: 1px solid grey;
+}
+
+.card-dw-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}

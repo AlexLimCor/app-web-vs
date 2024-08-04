@@ -1,0 +1,51 @@
+.cont-foro {
+  background-color: #222;
+  height: 90vh;
+  color: white;
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.title-foro {
+  /* border: 2px solid red; */
+  width: 90%;
+  /* text-align: center; */
+  margin: 20px;
+  padding: 20px;
+  background-color: black;
+}
+
+.title-foro p {
+  border-bottom: 1px solid grey;
+}
+
+.cont-foro-tabla {
+  background-color: black;
+  height: 50vh;
+  width: 90%;
+}
+
+.cont-index {
+  /* border: 2px solid red; */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #aaa;
+}
+
+.cont-index-nav a {
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  /* border: 2px solid red; */
+  margin: 2px;
+  /* background-color: #aaa; */
+}
+
+.cont-index-nav a:hover {
+  background-color: grey;
+}

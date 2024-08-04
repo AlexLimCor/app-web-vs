@@ -1,0 +1,14 @@
+.card-info-user {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.card-info-user img {
+  height: 50px;
+}
+
+.card-info-user b {
+  color: white;
+  margin-left: 30px;
+}

@@ -1,0 +1,79 @@
+.container-register {
+  background-color: #222;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-form {
+  border: 2px solid #aaa;
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: 20px;
+  /* border-radius: 20px; */
+}
+
+.div-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid blue; */
+  width: 50%;
+  padding: 20px;
+  color: white;
+}
+
+/* .div-account button {
+  margin: 5px;
+} */
+.section-form {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.title-register {
+  color: white;
+  /* border: 2px solid blue; */
+  border-bottom: 1px solid grey;
+  /* text-align: center; */
+  padding: 10px;
+  width: 100%;
+}
+
+.form-register {
+  border-right: 1px solid #aaa;
+  width: 50%;
+  color: white;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.cont-check {
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  /* height: 100px; */
+  /* padding: 5px; */
+}
+.cont-check input {
+  margin: 10px;
+}
+.form-register input,
+.form-register label {
+  margin-bottom: 10px;
+}
+
+.form-register input {
+  /* outline: none; */
+  background-color: transparent;
+  border: 1px solid grey;
+  color: white;
+  height: 40px;
+}

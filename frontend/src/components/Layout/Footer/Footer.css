@@ -1,0 +1,61 @@
+.cont-footer {
+  background-color: black;
+  /* height: 25vh; */
+}
+
+.info-foot {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-card {
+  /* border: 2px solid red; */
+  width: 30%;
+  /* padding: 20px; */
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.footer-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-card a:hover {
+  color: #aaa;
+  transition: 0.2s;
+}
+
+.card-redes {
+  display: flex;
+  /* border: 2px solid red; */
+  width: 30%;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card-redes i {
+  color: black;
+  text-decoration: none;
+  /* padding: 5px; */
+  /* margin: 30px; */
+  background-color: white;
+  padding: 10px;
+  /* height: 50px; */
+}
+.card-redes a {
+  margin: 10px;
+}
+
+.card-redes a i:hover {
+  background-color: #aaa;
+}
+
+.derechos-cop {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

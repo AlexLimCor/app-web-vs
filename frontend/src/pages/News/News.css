@@ -1,0 +1,18 @@
+.container-news {
+  /* border: 2px solid red; */
+  text-align: center;
+  /* background-color: #222; */
+}
+
+.container-news h4 {
+  color: white;
+  padding: 20px 20px 20px 10px;
+}
+
+.container-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 30px;
+  /* background-color: #222; */
+}

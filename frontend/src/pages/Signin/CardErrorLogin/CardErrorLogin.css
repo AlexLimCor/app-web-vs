@@ -1,0 +1,15 @@
+.card-error-login {
+  color: #fff;
+  background-color: #dc3545;
+  /* border: 2px solid rebeccapurple; */
+  width: 40%;
+  height: 7%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card-error-login span {
+  margin-left: 20px;
+}

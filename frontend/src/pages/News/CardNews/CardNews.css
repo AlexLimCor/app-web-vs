@@ -1,0 +1,29 @@
+.card-new {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  height: 300px;
+  width: 300px;
+  border: 1px solid grey;
+  text-decoration: none;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.card-img {
+  /* border: 2px solid blue; */
+  height: 80%;
+}
+
+.card-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.card-info-new {
+  /* border: 2px solid white; */
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
