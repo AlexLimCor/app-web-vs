@@ -2,13 +2,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./Register.css";
-import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
+// import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import Swal from "sweetalert2";
 import { validationForm } from "../../../middleware/validationForm";
-import { Form } from "react-router-dom";
 
-const clientID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+// const clientID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 export const Register = () => {
   const [info, setInfo] = useState(false);
   const [formDataRegister, setFormDataRegister] = useState({
@@ -39,7 +37,6 @@ export const Register = () => {
           body: JSON.stringify(formDataRegister),
         });
         if (response.ok) {
-          const data = await response.json();
           Swal.fire({
             background: "#222",
             color: "#fff",
@@ -50,12 +47,11 @@ export const Register = () => {
             title: "You 'r successfully",
             showConfirmButton: true,
           });
-          console.log(data);
         }
       } catch (error) {
         console.log(error);
+        setInfo(false);
       }
-      setInfo(false);
     } else {
       setInfo(true);
     }
@@ -120,7 +116,7 @@ export const Register = () => {
           </form>
           <article className="div-account">
             <h6>OTRAS ALTERNATIVAS:</h6>
-            <GoogleOAuthProvider clientId={clientID}>
+            {/* <GoogleOAuthProvider clientId={clientID}>
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
                   console.log(jwtDecode(credentialResponse.credential));
@@ -129,7 +125,7 @@ export const Register = () => {
                   console.log("Login Failed");
                 }}
               />
-            </GoogleOAuthProvider>
+            </GoogleOAuthProvider> */}
           </article>
         </div>
       </div>
