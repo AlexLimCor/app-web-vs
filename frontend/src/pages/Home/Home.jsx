@@ -6,22 +6,23 @@ import sxeLogo from "../../assets/img/sxe-logo.png";
 import skin from "../../assets/img/skin.jpg";
 import skinDefault from "../../assets/img/skin-default.jpeg";
 import sonido from "../../assets/img/sonido.jpg";
+
+const name = "COUNTER STRIKE 1.6 STEAM GRATIS (GS CLIENT)";
+const nameNoSteam = "COUNTER STRIKE 1.6 NO STEAM";
+const titleSxeInjected = "SXE-INJECTED 17.2 (ANTI CHEAT + FIX STEAM)";
+const titleSkin = "SKIN DE NUESTROS SERVIDORES PUBLICOS (ARMAS)";
+const titleSkinDefault = "SKIN DEL CS 1.6 DEFAULT (HD)";
+const titleSonidoDefault = "SONIDOS DEL CS 1.6 (ESPANIOL/INGLES)";
+const linkSonidoDefault =
+  "https://patagonia-strike.com/descargas/sonidos/Sonidos-Español-Ingles.rar";
+const linkSkinDefault =
+  "https://patagonia-strike.com/descargas/skins/Skins-HD-Default.rar";
+const linkSkin = "https://patagonia-strike.com/descargas/skins/skins.rar";
+const linkSxe = "https://patagonia-strike.com/descargas/sxe/Sxe-Injected.rar";
+const link = "https://dev-ms.ru/GSClient_Setup.exe";
+const linkNoSteam =
+  "https://patagonia-strike.com/descargas/juegos/cs16_no_steam.rar";
 export const Home = () => {
-  const name = "COUNTER STRIKE 1.6 STEAM GRATIS (GS CLIENT)";
-  const nameNoSteam = "COUNTER STRIKE 1.6 NO STEAM";
-  const titleSxeInjected = "SXE-INJECTED 17.2 (ANTI CHEAT + FIX STEAM)";
-  const titleSkin = "SKIN DE NUESTROS SERVIDORES PUBLICOS (ARMAS)";
-  const titleSkinDefault = "SKIN DEL CS 1.6 DEFAULT (HD)";
-  const titleSonidoDefault = "SONIDOS DEL CS 1.6 (ESPANIOL/INGLES)";
-  const linkSonidoDefault =
-    "https://patagonia-strike.com/descargas/sonidos/Sonidos-Español-Ingles.rar";
-  const linkSkinDefault =
-    "https://patagonia-strike.com/descargas/skins/Skins-HD-Default.rar";
-  const linkSkin = "https://patagonia-strike.com/descargas/skins/skins.rar";
-  const linkSxe = "https://patagonia-strike.com/descargas/sxe/Sxe-Injected.rar";
-  const link = "https://dev-ms.ru/GSClient_Setup.exe";
-  const linkNoSteam =
-    "https://patagonia-strike.com/descargas/juegos/cs16_no_steam.rar";
   return (
     <section className="container-home">
       <div className="container-banner">

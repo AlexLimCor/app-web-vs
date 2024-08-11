@@ -1,14 +1,16 @@
 // import GoogleLogin from "react-google-login";
+import React from "react";
 import { useEffect, useState } from "react";
 import "./Register.css";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import  Swal  from "sweetalert2"
+import Swal from "sweetalert2";
+import { validationForm } from "../../../middleware/validationForm";
+import { Form } from "react-router-dom";
 
-const clientId =
-  "953111487592-kitfbjrr8imuspur8nqk3m3qdljqpjfa.apps.googleusercontent.com";
+const clientID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 export const Register = () => {
-  const [info, setInfo] = useState("");
+  const [info, setInfo] = useState(false);
   const [formDataRegister, setFormDataRegister] = useState({
     name: "",
     email: "",
@@ -25,39 +27,37 @@ export const Register = () => {
   };
   const onSubmitFormRegister = async (event) => {
     event.preventDefault();
-    Object.entries(formDataRegister).forEach(([clave, valor]) => {
-      if (valor === "" || valor === false) {
-        setInfo("* Por favor complete el formulario");
-        return;
-      } else {
-        setInfo("");
-      }
-    });
-    // console.log(formDataRegister);
-    try {
-      const response = await fetch("http://localhost:8080/users/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formDataRegister),
-      });
-      if (response.ok){
-        const data = await response.json();
-        Swal.fire({
-          background: "#222",
-          color:"#fff",
-          iconColor:"green",
-          position: "center",
-          icon: "success",
-          text:"hola mundo",
-          title: "You 'r successfully",
-          showConfirmButton: true,
+    const estado = validationForm(formDataRegister);
+    if (estado) {
+      console.log(formDataRegister);
+      try {
+        const response = await fetch("http://localhost:8080/users/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formDataRegister),
         });
-        console.log(data)
+        if (response.ok) {
+          const data = await response.json();
+          Swal.fire({
+            background: "#222",
+            color: "#fff",
+            iconColor: "green",
+            position: "center",
+            icon: "success",
+            text: "hola mundo",
+            title: "You 'r successfully",
+            showConfirmButton: true,
+          });
+          console.log(data);
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
+      setInfo(false);
+    } else {
+      setInfo(true);
     }
   };
 
@@ -108,12 +108,19 @@ export const Register = () => {
                 Acepto todos los <a href="#">Terminos y Condiciones</a>
               </span>
             </div>
-            <span className="text-danger">{info}</span>
+
+            {info ? (
+              <span className="text-danger">
+                *Por favor , complete los datos correspondientes
+              </span>
+            ) : (
+              ""
+            )}
             <button className="btn btn-danger m-2">Crear mi Cuenta</button>
           </form>
           <article className="div-account">
             <h6>OTRAS ALTERNATIVAS:</h6>
-            <GoogleOAuthProvider clientId={clientId}>
+            <GoogleOAuthProvider clientId={clientID}>
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
                   console.log(jwtDecode(credentialResponse.credential));

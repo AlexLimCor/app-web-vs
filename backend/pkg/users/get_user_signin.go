@@ -2,9 +2,11 @@ package users
 
 import (
 	"backend/models"
+	"backend/utils/token"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"golang.org/x/crypto/bcrypt"
 )
 
 
@@ -13,6 +15,7 @@ type userData struct{
 	Email string `json:"email"`
 	Password string `json:"password"`
 }
+
 
 func(h handler)getUserValidation(ctx *gin.Context){
 	var user models.User
@@ -28,15 +31,19 @@ func(h handler)getUserValidation(ctx *gin.Context){
 		})
 		return
 	}
-
-	if user.Password != body.Password{
-		ctx.AbortWithStatusJSON(http.StatusUnauthorized,gin.H{
-			"message":"Invalid email or password",
+	if err := bcrypt.CompareHashAndPassword([]byte(user.Password),[]byte(body.Password)) ; err != nil{
+		ctx.JSON(http.StatusBadRequest,gin.H{
+			"message":"Email or Password invalid",
 		})
 		return
 	}
-	
-	ctx.JSON(http.StatusOK,&user)
-
-
+	myToken , err := token.GenerateToken(user)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest,err)
+		return;
+	}
+	ctx.SetCookie("auth",myToken,3600,"/","localhost",false,true)
+	ctx.JSON(http.StatusOK,gin.H{
+		"message":"generate cookie",
+	})
 }

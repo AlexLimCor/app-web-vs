@@ -16,19 +16,19 @@ export const Footer = () => {
           <a href="#">Politica de Privacidad</a>
         </div>
         <div className="card-redes">
-          <a href="#" target="_blank">
+          <a href="#">
             <i className="fa-brands fa-twitch"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="#">
             <i className="fa-brands fa-discord"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="#">
             <i className="fa-brands fa-tiktok"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="#">
             <i className="fa-brands fa-instagram"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="#">
             <i className="fa-brands fa-whatsapp"></i>
           </a>
         </div>

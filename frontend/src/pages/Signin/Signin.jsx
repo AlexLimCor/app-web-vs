@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Signin.css";
 import { CardErrorLogin } from "./CardErrorLogin/CardErrorLogin";
-import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
-import { GoogleOAuthProvider } from "@react-oauth/google";
+// import { GoogleLogin } from "@react-oauth/google";
+// import { GoogleOAuthProvider } from "@react-oauth/google";
+import { validationForm } from "../../../middleware/validationForm";
+import { AuthContext } from "../../context/AuthProvider";
 
-const clientId =
-  "953111487592-kitfbjrr8imuspur8nqk3m3qdljqpjfa.apps.googleusercontent.com";
+// const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 export const Signin = () => {
+  const { login } = useContext(AuthContext);
   const [error, setError] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -22,28 +23,15 @@ export const Signin = () => {
   };
   const onSubmitFormSignin = async (event) => {
     event.preventDefault();
-    // console.log(formData);
-    try {
-      const response = await fetch("http://localhost:8080/users/validation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-      } else if (response.status === 401) {
-        setError(true);
-      } else {
-        console.error("Unexecpeted error", response.status);
-      }
-    } catch (error) {
-      console.log(error);
+    const state = validationForm(formData);
+
+    if (state) {
+      login(formData);
+    } else {
+      setError(true);
     }
   };
-  
+
   return (
     <div className="container-form">
       {error === true ? (
@@ -59,7 +47,7 @@ export const Signin = () => {
         <div className="container-info">
           <h4>INICIAR SESION</h4>
         </div>
-        <GoogleOAuthProvider clientId={clientId}>
+        {/* <GoogleOAuthProvider clientId={clientId}>
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               console.log(jwtDecode(credentialResponse.credential));
@@ -68,7 +56,7 @@ export const Signin = () => {
               console.log("Login Failed");
             }}
           />
-        </GoogleOAuthProvider>
+        </GoogleOAuthProvider> */}
 
         <form className="form-signin" onSubmit={onSubmitFormSignin}>
           <label htmlFor="name">Email:</label>

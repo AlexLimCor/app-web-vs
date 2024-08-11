@@ -1,4 +1,6 @@
 // import { ListOnline } from "./ListOnline";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider";
 import { CardServer } from "./CardServer/CardServer";
 
 const servidor = [
@@ -10,6 +12,8 @@ const servidor = [
 ];
 
 export const Server = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div className="section-server">
       {servidor.map((data) => {
